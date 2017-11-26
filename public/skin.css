@@ -1,0 +1,43 @@
+body {
+	font-family: 'Bitter', serif;
+	font-size: 100%;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+header #logo { 
+	order: 1;
+	flex-grow: 1;
+	flex-basis: 10%;
+	padding: 0.5em;
+}
+header #logo img { 
+	width: 100%; 
+	height: auto; 
+}
+
+header #heading { 
+	order: 2;
+	flex-grow: 1;
+	flex-basis: 35%;
+	padding: 0 2em;
+}
+#heading strong {
+	font-size: 1.875em;
+	display: block;
+	line-height: 1.1;
+}
+#heading em {
+	font-size: 0.875em;
+	font-style: normal;
+}
+
+header nav { 
+	order: 3;
+	flex-grow: 6;
+	flex-basis: 50%;
+}
