@@ -7,6 +7,7 @@ header {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	border-bottom: solid 1px #eee;
 }
 
 header #logo { 
@@ -40,4 +41,71 @@ header nav {
 	order: 3;
 	flex-grow: 6;
 	flex-basis: 50%;
+	align-self: flex-end;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+nav#main-nav > a {
+	display: block;
+	padding: 1em 0.5em 1em 0.5em;
+	margin: 0.5em;
+	text-decoration: none;
+	transition: padding 0.15s linear;
+}
+nav#main-nav > a:hover {
+	padding-bottom: 0.25em;
+}
+
+main { 
+	padding: 2rem; 
+}
+
+footer {
+	background-color: #efefef;
+	padding: 2rem;
+	font-weight: 100;
+	color: #333;
+	font-size: 0.875em;
+	display: flex;
+	align-items: baseline;
+	flex-direction: row;
+}
+footer #legal { 
+	flex-basis: 15%;
+	flex-grow: 1;
+}
+footer nav {
+	flex-basis: 70%;
+	flex-grow: 4;
+	justify-content: flex-end;
+	display: flex;
+	align-items: baseline;
+}
+footer nav a {
+	margin: 0 1em;
+	padding: 0.5em;
+}
+
+@media (max-width: 991px) {
+	header {
+		flex-wrap: wrap;
+	}
+	header #logo { 
+		flex-basis: 35%;
+		flex-grow: 0;
+	}
+	header #heading {
+		flex-basis: 45%;
+		flex-grow: 0;
+	}
+	header nav {
+		flex-basis: 100%;
+		justify-content: space-between;
+		background-color: #f7f7f7;
+	}
+	nav#main-nav > a:hover {
+		padding: 1em 0.5em 1em 0.5em;
+	}
 }
