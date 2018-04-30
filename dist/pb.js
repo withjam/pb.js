@@ -60,6 +60,9 @@
 		}).then(function(resp) {
 			var page = pb.mvc.loadPage(resp);
 			var title = page.querySelector('title').innerHTML;
+			// reset selected page
+			pb.dom.removeClass(document.querySelectorAll('.current-page'), 'current-page');
+			pb.dom.addClass(document.querySelectorAll('[href="' + url + '"]'), 'current-page');
 			console.log('pushing state', title);
 			document.title = title;
 			if (!silent) {
@@ -67,6 +70,8 @@
 			}
 		});
 	}
+
+	pb.util = {};
 
 	pb.dom = {};
 	pb.dom.matches = function(el, selector) {
@@ -94,6 +99,24 @@
 		if (t) {
 			t.innerHTML = el.innerHTML;
 		}
+	}
+	pb.dom.removeClass = function(items, className) {
+		console.log('removing class', items);
+		items.forEach(function(element) {
+			var names = element.className ? element.className.split(' ') : [];
+			var ind = names.indexOf(className);
+			if (ind > -1) {
+				names.splice(ind,1);
+			}
+			element.className = names.join(' ');
+		});
+	}
+	pb.dom.addClass = function(items, className) {
+		items.forEach(function(element) {
+			var names = element.className ? element.className.split(' ') : [];
+			names.push(className);
+			element.className = names.join(' ');
+		});
 	}
 
 	pb.mvc = {};
