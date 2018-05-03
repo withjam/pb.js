@@ -88,6 +88,18 @@ footer nav a {
 	padding: 0.5em;
 }
 
+#main-content {
+	display: flex;
+}
+
+#main-content article {
+	width: 100%;
+}
+
+#main-content > article + aside {
+	width: 50%;
+}
+
 @media (max-width: 991px) {
 	header {
 		flex-wrap: wrap;

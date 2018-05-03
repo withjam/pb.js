@@ -47,6 +47,7 @@
 			deferred.resolve(req.response);
 		});
 		req.open(opts.method || 'GET', opts.url);
+		req.setRequestHeader('X-PBJS-Mode', 'partial');
 		req.send();
 		return deferred.promise;
 	}
